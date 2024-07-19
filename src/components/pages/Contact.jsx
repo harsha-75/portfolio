@@ -20,8 +20,8 @@ function Contact() {
     e.preventDefault();
     const { name, email, message } = formData;
 
-    const telegramBotToken = '7137816586:AAEUE5E2nKPqxgzGcm9yhENFyw6kGmYTDf4';
-    const chatId = '1438593274'; // Your verified chat ID
+    const telegramBotToken = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
+    const chatId = process.env.REACT_APP_CHAT_ID; 
     const text = `New contact form submission:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`;
 
     const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;

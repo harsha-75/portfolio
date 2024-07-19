@@ -20,6 +20,12 @@ function Contact() {
     e.preventDefault();
     const { name, email, message } = formData;
 
+    if(name===''|| email==='' || message==='')
+      {
+            toast.error('please fill all the fields..')
+      }
+   else
+   {
     const telegramBotToken = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
     const chatId = process.env.REACT_APP_CHAT_ID; 
     const text = `New contact form submission:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`;
@@ -44,12 +50,14 @@ function Contact() {
         })
       } else {
         console.error('Error sending message:', data);
-        alert('Failed to send message. Please try again later.');
+        toast.error('Failed to send message. Please try again later.');
       }
     } catch (error) {
       console.error('Error sending message:', error);
-      alert('Failed to send message. Please try again later.');
+      toast.error('Failed to send message. Please try again later.');
     }
+   }
+    
   }
 
   return (

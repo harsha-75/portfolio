@@ -15,7 +15,7 @@ function Home() {
     <>
     
     <div className="flex flex-col md:flex-row items-center justify-center md:justify-around mt-5">
-      <img src={profile} alt="Profile" className="w-80 h-80 rounded-full mb-5 md:ml-10 md:mr-20" />
+      <img src={profile} alt="Profile" className="w-80 h-80 object-cover rounded-full mb-5 md:ml-10 md:mr-20" />
       <div className="flex flex-col items-center md:items-start">
         <h1 className="text-center md:text-left">Hello, I'm</h1>
         <h1 className="text-3xl mb-3 mt-2 text-center md:text-left">Manne Harsha Vardhan</h1>
